@@ -1,10 +1,12 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ModuleWithProviders } from '@angular/core';
+import { LoggedInGuardService } from './services/logged-in-guard.service';
+import { SigninComponent } from './components/signin/signin.component';
 
-const routes: Routes = [];
-
-@NgModule({
-  exports: [RouterModule],
-  imports: [RouterModule.forRoot(routes)]
-})
-export class AppRoutingModule {}
+const appRoutes: Routes = [
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: 'signin', component: SigninComponent },
+    { path: 'dashboard', component: DashboardComponent,canActivate: [LoggedInGuardService] }
+];
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
