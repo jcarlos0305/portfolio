@@ -1,0 +1,9 @@
+<div class="navbar">
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-outline-primary" [ngClass]="{'active': filter === ''}" (click)="setFilter.emit('')">Todas</button>
+    <button class="btn btn-outline-primary" [ngClass]="{'active': filter === 'Barcelona'}" (click)="setFilter.emit('Barcelona')">Barcelona</button>
+    <button class="btn btn-outline-primary" [ngClass]="{'active': filter === 'Italia'}" (click)="setFilter.emit('Italia')">Italia</button>
+    <button class="btn btn-outline-primary" [ngClass]="{'active': filter === 'Alemania'}" (click)="setFilter.emit('Alemania')">Alemania</button>
+    <button class="btn btn-outline-primary" [ngClass]="{'active': filter === 'Paris'}" (click)="setFilter.emit('Paris')">Paris</button>
+  </div>
+</div>
